@@ -4,8 +4,8 @@
 controller:
   name: controller
   image:
-    repository: rancher/nginx-ingress-controller
-    tag: "0.21.0-rancher3"
+    repository: quay.io/kubernetes-ingress-controller/nginx-ingress-controller
+    tag: "0.26.1"
     pullPolicy: IfNotPresent
     # www-data -> uid 33
     runAsUser: 33
@@ -58,7 +58,7 @@ controller:
 
   ## Name of the ingress class to route through this controller
   ##
-  ingressClass: {}
+  ingressClass: nginx
 
   # labels to add to the pod container metadata
   podLabels: {}
@@ -409,8 +409,8 @@ defaultBackend:
 
   name: default-backend
   image:
-    repository: rancher/nginx-ingress-controller-defaultbackend
-    tag: "1.5-rancher1"
+    repository: k8s.gcr.io/defaultbackend-amd64
+    tag: "1.5"
     pullPolicy: IfNotPresent
     # nobody user -> uid 65534
     runAsUser: 65534
