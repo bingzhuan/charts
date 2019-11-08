@@ -8,16 +8,16 @@ questions:
   type: string
   description: "Set the key of Ingress Node labels, eg: app:testapp(key:Values)"
   label: NodeAffinity Key
-  group: "Customized Settings"
+  group: "Customized Settings for Scheduler"
 - variable: labels.values
   default: "testapp"
   type: string
   description: "Set the key of Ingress Node labels, eg: app:testapp(key:Values)"
   label: NodeAffinity Values
-  group: "Customized Settings"
+  group: "Customized Settings for Scheduler"
 - variable: ingress.class
   default: "testapp"
   type: string
   description: "Set Ingress Class"
   label: Ingress Class 
-  group: "Customized Settings for Ingress"
+  group: "Customized Settings for Ingress Class"
