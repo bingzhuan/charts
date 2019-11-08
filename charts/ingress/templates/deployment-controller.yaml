@@ -15,15 +15,6 @@ spec:
         prometheus.io/port: '10254'
         prometheus.io/scrape: 'true'
     spec:
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-              - matchExpressions:
-                - key: beta.kubernetes.io/os
-                  operator: NotIn
-                  values:
-                    - windows
       hostNetwork: true
       serviceAccountName: nginx-ingress-serviceaccount
       affinity:
@@ -35,10 +26,10 @@ spec:
                 operator: In
                 values:
                 - "true"
-              - key: app
+              - key: {{ .Values.labels.key }}
                 operator: In
                 values:
-                - "{{ .Values.labels }}"
+                - "{{ .Values.labels.values }}"
       containers:
         - name: nginx-ingress-controller
           image: rancher/nginx-ingress-controller:0.21.0-rancher3

@@ -1,1 +1,5 @@
-labels: appa
+labels: 
+  key: app
+  values: testapp
+ingress:
+  class: nginx

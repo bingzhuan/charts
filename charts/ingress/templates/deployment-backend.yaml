@@ -21,10 +21,10 @@ spec:
                 operator: In
                 values:
                 - "true"
-              - key: app
+              - key: {{ .Values.labels.key }}
                 operator: In
                 values:
-                - "{{ .Values.labels }}"
+                - "{{ .Values.labels.values }}"
       containers:
       - name: default-http-backend
         # Any image is permissable as long as:

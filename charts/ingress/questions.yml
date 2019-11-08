@@ -3,15 +3,21 @@ labels:
 categories:
 - CI/CD
 questions:
-- variable: labels
+- variable: labels.key
+  default: "app"
+  type: string
+  description: "Set the key of Ingress Node labels, eg: app:testapp(key:Values)"
+  label: NodeAffinity Key
+  group: "Customized Settings"
+- variable: labels.values
   default: "testapp"
   type: string
-  description: "Used for scheduler. Set the key of Ingress Node labels, eg: app:app-1, input app-1"
-  label: Set Key of Ingress Node label
+  description: "Set the key of Ingress Node labels, eg: app:testapp(key:Values)"
+  label: NodeAffinity Values
   group: "Customized Settings"
 - variable: ingress.class
-  default: "nginx"
+  default: "testapp"
   type: string
-  description: "Ingress Class"
-  label: Ingress
-  group: "Customized Settings"
+  description: "Set Ingress Class"
+  label: Ingress Class 
+  group: "Customized Settings for Ingress"
