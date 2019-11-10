@@ -10,3 +10,4 @@ subjects:
   - kind: ServiceAccount
     name: nginx-ingress-serviceaccount
     namespace: {{ .Release.Namespace }}
+    
